@@ -37,10 +37,10 @@ public class PruebaEva03 {
 
 	@Test
 	public void  queSePuedaCrearUnTriatleta() {
-		Triatleta nuevo = new Triatleta(4, "Luna", "Olimpico", TipoDeBicicleta.TRIA);
+		Triatleta nuevo = new Triatleta(4, "Luna", "Olimpico", "Ruta");
 		
 		assertEquals("Olimpico", nuevo.getDistanciaPreferida());
-		assertEquals(TipoDeBicicleta.TRIA, nuevo.getTipoDeBicicleta());
+		assertEquals("Ruta" , nuevo.getTipoDeBicicleta());
 		assertEquals((Integer)4, nuevo.getNumeroDeSocio());
 	}
 	
@@ -53,13 +53,13 @@ public class PruebaEva03 {
 		actual.agregarDeportista(new Corredor(1001, "Natalia", 5000));
 		actual.agregarDeportista(new Corredor(1002, "Jorge", 21000));
 		actual.agregarDeportista(new Nadador(1003, "Lucrecia", "Pecho"));
-		actual.agregarDeportista(new Triatleta(1004, "Tamara", "Olimpico", TipoDeBicicleta.RUTA));
+		actual.agregarDeportista(new Triatleta(1004, "Tamara", "Olimpico", "Ruta"));
 		actual.agregarDeportista(new Ciclista(1005, "Alberto", "Mountain"));
 		actual.agregarDeportista(new Ciclista(1006, "Domingo", "BMX"));
 		actual.agregarDeportista(new Corredor(1007, "Luciana", 10000));
 		actual.agregarDeportista(new Nadador(1008, "Luna", "Crol"));
 		actual.agregarDeportista(new Nadador(1009, "Victor", "Mariposa"));
-		actual.agregarDeportista(new Triatleta(1004, "Cecilia", "Ironman", TipoDeBicicleta.TRIA));
+		actual.agregarDeportista(new Triatleta(1004, "Cecilia", "Ironman", "Tria"));
 			
 		assertEquals((Integer) 10, actual.getCantidadSocios());		
 	}
