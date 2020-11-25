@@ -3,12 +3,14 @@ package ar.edu.unlam.pb2.eva03;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 
 import ar.edu.unlam.pb2.eva03.enumeradores.TipoDeEvento;
 
 public class Club {
 
+	
 	private String nombre;
 	private Set<Deportista> socios = new HashSet<Deportista>();
 	private Map<String, Evento> competencias = new HashMap<String,Evento>();
@@ -55,10 +57,13 @@ public class Club {
 
 
 	public Integer inscribirEnEvento(String nombreEvento, Deportista deportista) throws NoEstaPreparado {
-		if(this.competencias.containsKey(deportista)) {
-			
+		for(Entry<String,Evento> evento : this.competencias.entrySet()) {
+			if(evento.equals(nombreEvento)) {
+				this.socios.add(deportista);
+			}
+			throw new NoEstaPreparado();
 		}
-		throw new NoEstaPreparado();
+		return 0;
 	}
 
 	
